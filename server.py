@@ -136,7 +136,7 @@ def fun(q):
     Client_FName = (test_rec['Client_First_Name'].values)[0]
     Client_LName = (test_rec['Client_Last_Name'].values)[0]
     Client_PolNo = (test_rec['Policy_Number'].values)[0]
-    Client_Age = (test_rec['Attained_age_at_Issue'].values)[0]
+    Client_Age = str((test_rec['Attained_age_at_Issue'].values)[0])
     
                            
     
