@@ -122,10 +122,10 @@ def fun(q):
     #Before Fund Switch
     Before_Fund_Switch_Equity_Cash_Value = Current_Investment_Cashvalue_equity
     Before_Fund_Switch_Equity_Outstanding_units = Current_Investment_units_equity
-    Before_Fund_Switch_Equity_Percent_Split = (equity_share * 100)
+    Before_Fund_Switch_Equity_Percent_Split = (equity_share)
     Before_Fund_Switch_MM_Cash_Value = Current_Investment_Cashvalue_MM
     Before_Fund_Switch_MM_Outstanding_units = Current_Investment_units_MM
-    Before_Fund_Switch_MM_Percent_Split = (money_market_share * 100)
+    Before_Fund_Switch_MM_Percent_Split = (money_market_share)
     
     #Recommended Split
     Recommended_Equity_Split = predict_equity_percent
