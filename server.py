@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 app = Flask(__name__,static_url_path="/static")
 from flask import jsonify
+import os
 import os.path
 import sys
 import json
@@ -25,6 +26,7 @@ def api_call():
 
 def fun(q):
     choice = q
+    #choice = "ALBDULA000048805"
     print(choice)
     #choice = "ALBDULA000048805"
     ##Packages
@@ -132,5 +134,9 @@ def fun(q):
     return (json.dumps(val))
 	
 if __name__ == '__main__':
+    
+    port = int(os.environ.get("PORT", 5000))
     #app.run(ssl_context='adhoc')
-    app.run(host='0.0.0.0', port=7000)
+    app.run(host='0.0.0.0', port=port)
+    
+    
