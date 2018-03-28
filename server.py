@@ -59,7 +59,8 @@ def fun(q):
     csv_file = csv.reader(open('Current_Fund_Values1.csv'), delimiter=",")
     for row in csv_file:
         print(row)
-        if choice == row[0]:
+        #if choice == row[0]:
+        if (choice == row[2] or choice == row[0] or choice == row[1]):
             print("in")
             #Policy_Status = row[3]
             #Contract_Issue_date = row[4]
