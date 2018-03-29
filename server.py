@@ -155,12 +155,15 @@ def fun(q):
     Recommended_Equity_Split = predict_equity_percent
     Recommended_MM_Split = predict_mm_percent
     
+    #current fund value
+    Equity_NAV = 10
+    Bond_NAV = 20
     
     #After Fund Switch
     After_Fund_Switch_Equity_Cash_Value = Recommeneded_Equity_Investment
-    After_Fund_Switch_Equity_Units = After_Fund_Switch_Equity_Cash_Value / 10.8774121
+    After_Fund_Switch_Equity_Units = After_Fund_Switch_Equity_Cash_Value / Equity_NAV
     After_Fund_Switch_MM_Cash_Value = Recommended_MM_Investment
-    After_Fund_Switch_MM_Units = After_Fund_Switch_MM_Cash_Value / 10.8774121
+    After_Fund_Switch_MM_Units = After_Fund_Switch_MM_Cash_Value / Bond_NAV
 
     #val = {"ClientFirstName":Client_FName, "ClientLastName":Client_LName, "ClientPolicyNo":Client_PolNo, "ClientAge":Client_Age, "BeforeCashVal":Before_Fund_Switch_Equity_Cash_Value,"BeforeOutstanding":Before_Fund_Switch_Equity_Outstanding_units,"BeforePercentSplit":Before_Fund_Switch_Equity_Percent_Split,"BeforeMMCashVal":Before_Fund_Switch_MM_Cash_Value,"BeforeMMOutstanding":Before_Fund_Switch_MM_Outstanding_units,"BeforeMMPercentSplit":Before_Fund_Switch_MM_Percent_Split,"RecommendedEquitySplit":Recommended_Equity_Split,"RecommendedMM":Recommended_MM_Split,"AfterCashValue":After_Fund_Switch_Equity_Cash_Value,"AfterEquityUnits":After_Fund_Switch_Equity_Units,"AfterMMCashValue":After_Fund_Switch_MM_Cash_Value,"AfterMMEquityUnits":After_Fund_Switch_MM_Units}
     #val = {"ClientFirstName":Client_FName, "ClientLastName":Client_LName, "ClientPolicyNo":Client_PolNo,  "BeforeCashVal":Before_Fund_Switch_Equity_Cash_Value,"BeforeOutstanding":Before_Fund_Switch_Equity_Outstanding_units,"BeforePercentSplit":Before_Fund_Switch_Equity_Percent_Split,"BeforeMMCashVal":Before_Fund_Switch_MM_Cash_Value,"BeforeMMOutstanding":Before_Fund_Switch_MM_Outstanding_units,"BeforeMMPercentSplit":Before_Fund_Switch_MM_Percent_Split,"RecommendedEquitySplit":Recommended_Equity_Split,"RecommendedMM":Recommended_MM_Split,"AfterCashValue":After_Fund_Switch_Equity_Cash_Value,"AfterEquityUnits":After_Fund_Switch_Equity_Units,"AfterMMCashValue":After_Fund_Switch_MM_Cash_Value,"AfterMMEquityUnits":After_Fund_Switch_MM_Units}
