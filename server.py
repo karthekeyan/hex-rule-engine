@@ -48,7 +48,7 @@ def fun(q):
     
     #Rule based model
     def Classify(test_rec):
-        if test_rec.Attained_age_at_Issue.values < 50 and test_rec.Marital_Status.values == 'single' and test_rec.Income_per_Annum.values < 80000 and test_rec.Credit_Score.values > 300 and test_rec.Employment_Status.values == 'Working' and test_rec.Risk_Appetite_Score.values > 5 and test_rec.SnP_500_Index_Score.values > 6 :
+        if test_rec.Attained_age_at_Issue.values < 50 and test_rec.Marital_Status.values == 'Single' and test_rec.Income_per_Annum.values < 80000 and test_rec.Credit_Score.values > 300 and test_rec.Employment_Status.values == 'Working' and test_rec.Risk_Appetite_Score.values > 5 and test_rec.SnP_500_Index_Score.values > 6 :
             #print("Financial Guidance = 'Aggressive'")
             return("Aggressive")
         if test_rec.Attained_age_at_Issue.values >= 50 and test_rec.Marital_Status.values == 'Married' and test_rec.Income_per_Annum.values > 80000 and test_rec.Credit_Score.values > 400 and test_rec.Employment_Status.values == 'Working' and test_rec.Risk_Appetite_Score.values <= 5 and test_rec.SnP_500_Index_Score.values < 6 :        
@@ -88,7 +88,7 @@ def fun(q):
     
     ## Recommendatiion calculation
     
-    if category == "aggressive":
+    if category == "Aggressive":
         total = Current_Investment_Cashvalue_equity + Current_Investment_Cashvalue_MM
         equity_share = (Current_Investment_Cashvalue_equity / total)*100
         money_market_share = (Current_Investment_Cashvalue_MM / total)*100
@@ -154,8 +154,8 @@ def fun(q):
     
                            
     
-    Equity_fund_name = "Alamere Equity Income"
-    MM_fund_name = "Alamere Money Market"
+    Equity_fund_name = 'Alamere Equity Income'
+    MM_fund_name = 'Alamere Money Market'
     
     #Before Fund Switch
     Before_Fund_Switch_Equity_Cash_Value = Current_Investment_Cashvalue_equity
