@@ -101,15 +101,19 @@ def fun(q):
         if difference_equity > 0:
             Equity_Switchin = round(Current_Investment_units_equity * abs(difference_equity/100))
             Equity_Switchout = 0
+            Equity_switch_amount = Equity_Switchin * Equity_NAV
         else:
             Equity_Switchout = round(Current_Investment_units_equity * abs(difference_equity/100))
             Equity_Switchin = 0
+            Equity_switch_amount = Equity_Switchout * Equity_NAV
         if difference_mm > 0:        
             mm_Switchin = round(Current_Investment_units_MM * abs(difference_mm/100))
             mm_Switchout = 0
+            mm_switch_amount = mm_Switchin * Bond_NAV
         else:
             mm_Switchout = round(Current_Investment_units_MM * abs(difference_mm/100))
             mm_Switchin = 0
+            mm_switch_amount = mm_Switchout * Bond_NAV
         
     
     elif category == "Safetynet":
@@ -122,18 +126,24 @@ def fun(q):
         difference_mm = predict_mm_percent - money_market_share
         Recommeneded_Equity_Investment = total * 0.4
         Recommended_MM_Investment = total * 0.6
+        
         if difference_equity > 0:        
             Equity_Switchin = round(Current_Investment_units_equity * abs(difference_equity/100))
             Equity_Switchout = 0
+            Equity_switch_amount = Equity_Switchin * Equity_NAV
         else:
             Equity_Switchout = round(Current_Investment_units_equity * abs(difference_equity/100))
             Equity_Switchin = 0
+            Equity_switch_amount = Equity_Switchout * Equity_NAV
+            
         if difference_mm > 0:        
             mm_Switchin = round(Current_Investment_units_MM * abs(difference_mm/100))
             mm_Switchout = 0
+            mm_switch_amount = mm_Switchin * Bond_NAV
         else:
             mm_Switchout = round(Current_Investment_units_MM * abs(difference_mm/100))
             mm_Switchin = 0
+            mm_switch_amount = mm_Switchout * Bond_NAV
         
     ## output values that needs to be passed via API
     
@@ -170,7 +180,7 @@ def fun(q):
 
     #val = {"ClientFirstName":Client_FName, "ClientLastName":Client_LName, "ClientPolicyNo":Client_PolNo, "ClientAge":Client_Age, "BeforeCashVal":Before_Fund_Switch_Equity_Cash_Value,"BeforeOutstanding":Before_Fund_Switch_Equity_Outstanding_units,"BeforePercentSplit":Before_Fund_Switch_Equity_Percent_Split,"BeforeMMCashVal":Before_Fund_Switch_MM_Cash_Value,"BeforeMMOutstanding":Before_Fund_Switch_MM_Outstanding_units,"BeforeMMPercentSplit":Before_Fund_Switch_MM_Percent_Split,"RecommendedEquitySplit":Recommended_Equity_Split,"RecommendedMM":Recommended_MM_Split,"AfterCashValue":After_Fund_Switch_Equity_Cash_Value,"AfterEquityUnits":After_Fund_Switch_Equity_Units,"AfterMMCashValue":After_Fund_Switch_MM_Cash_Value,"AfterMMEquityUnits":After_Fund_Switch_MM_Units}
     #val = {"ClientFirstName":Client_FName, "ClientLastName":Client_LName, "ClientPolicyNo":Client_PolNo,  "BeforeCashVal":Before_Fund_Switch_Equity_Cash_Value,"BeforeOutstanding":Before_Fund_Switch_Equity_Outstanding_units,"BeforePercentSplit":Before_Fund_Switch_Equity_Percent_Split,"BeforeMMCashVal":Before_Fund_Switch_MM_Cash_Value,"BeforeMMOutstanding":Before_Fund_Switch_MM_Outstanding_units,"BeforeMMPercentSplit":Before_Fund_Switch_MM_Percent_Split,"RecommendedEquitySplit":Recommended_Equity_Split,"RecommendedMM":Recommended_MM_Split,"AfterCashValue":After_Fund_Switch_Equity_Cash_Value,"AfterEquityUnits":After_Fund_Switch_Equity_Units,"AfterMMCashValue":After_Fund_Switch_MM_Cash_Value,"AfterMMEquityUnits":After_Fund_Switch_MM_Units}
-    val = {"ClientFirstName":Client_FName, "ClientLastName":Client_LName, "ClientPolicyNo":Client_PolNo,  "ClientAge":Client_Age, "BeforeCashVal":Before_Fund_Switch_Equity_Cash_Value,"BeforeOutstanding":Before_Fund_Switch_Equity_Outstanding_units,"BeforePercentSplit":Before_Fund_Switch_Equity_Percent_Split,"BeforeMMCashVal":Before_Fund_Switch_MM_Cash_Value,"BeforeMMOutstanding":Before_Fund_Switch_MM_Outstanding_units,"BeforeMMPercentSplit":Before_Fund_Switch_MM_Percent_Split,"RecommendedEquitySplit":Recommended_Equity_Split,"RecommendedMM":Recommended_MM_Split,"AfterCashValue":After_Fund_Switch_Equity_Cash_Value,"AfterEquityUnits":After_Fund_Switch_Equity_Units,"AfterMMCashValue":After_Fund_Switch_MM_Cash_Value,"AfterMMEquityUnits":After_Fund_Switch_MM_Units, "EquitySwitchin":Equity_Switchin, "EquitySwitchout":Equity_Switchout,  "MMSwitchin":mm_Switchin, "MMSwitchout":mm_Switchout, "EquityNAV": Equity_NAV, "BondNAV": Bond_NAV }
+    val = {"ClientFirstName":Client_FName, "ClientLastName":Client_LName, "ClientPolicyNo":Client_PolNo,  "ClientAge":Client_Age, "BeforeCashVal":Before_Fund_Switch_Equity_Cash_Value,"BeforeOutstanding":Before_Fund_Switch_Equity_Outstanding_units,"BeforePercentSplit":Before_Fund_Switch_Equity_Percent_Split,"BeforeMMCashVal":Before_Fund_Switch_MM_Cash_Value,"BeforeMMOutstanding":Before_Fund_Switch_MM_Outstanding_units,"BeforeMMPercentSplit":Before_Fund_Switch_MM_Percent_Split,"RecommendedEquitySplit":Recommended_Equity_Split,"RecommendedMM":Recommended_MM_Split,"AfterCashValue":After_Fund_Switch_Equity_Cash_Value,"AfterEquityUnits":After_Fund_Switch_Equity_Units,"AfterMMCashValue":After_Fund_Switch_MM_Cash_Value,"AfterMMEquityUnits":After_Fund_Switch_MM_Units, "EquitySwitchin":Equity_Switchin, "EquitySwitchout":Equity_Switchout,  "MMSwitchin":mm_Switchin, "MMSwitchout":mm_Switchout, "EquityNAV": Equity_NAV, "BondNAV": Bond_NAV, "EquitySwitchAmt": Equity_switch_amount, "BondSwitchAmt": mm_switch_amount }
     
     return (json.dumps(val))
 	
