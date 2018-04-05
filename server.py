@@ -6,6 +6,7 @@ import os.path
 import sys
 import json
 import sklearn
+import pickle
 import pandas as pd
 from flask import request
 import requests
