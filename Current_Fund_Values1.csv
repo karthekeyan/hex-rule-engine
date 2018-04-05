@@ -1,4 +1,4 @@
-Client_First_Name,Client_Second_Name,Policy_Number,Policy_Status,Contract_Issue_date,Total_Net_Worth,Current_Investment_Cashvalue_equity,Current_Investment_Cashvalue_MM,Current_Investment_units_equity,Current_Investment_units_MM,Todays_Unit_Value
-Fredrick,Gonsalves,ALBDULA000048805,Active,10/10/2010,90000000,10842.95,9678.54,996.831411,889.783484,10.87741207
-Valarie,Jones,ALBDULA000048815,Active,10/10/2012,45000000,5421.475,4839.27,498.4157055,444.891742,10.87741207
-Sachin,Tendulkar,ALBDULA000048948,Active,10/10/2012,180000000,21685.9,19357.08,1993.662822,1779.566968,43.50964828
+Client_First_Name,Client_Second_Name,Policy_Number,Policy_Status,Contract_Issue_date,Total_Net_Worth,Current_Investment_Cashvalue_equity,Current_Investment_Cashvalue_MM,Current_Investment_units_equity,Current_Investment_units_MM,Todays_Unit_Value_Eq,Todays_Unit_Value_Bond
+Fredrick,Gonsalves,ALBDULA000048805,Active,10/10/2010,90000000,12915.06,8572,1131.617542,754.420811,11.41291884,11.36235888
+Valarie,Jones,ALBDULA000049005,Active,10/10/2012,45000000,305487.44,591987.64,24755.37151,47382.9747,12.34024882,12.49367814
+Sachin,Tendulkar,ALBDULA000048948,Active,10/10/2012,180000000,21685.9,19357.08,1993.662822,1779.566968,12.34024882,12.49367814
