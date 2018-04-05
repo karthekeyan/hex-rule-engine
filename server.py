@@ -45,12 +45,12 @@ def fun(q):
     #Filter the required data
     test_rec = OIPA_data.loc[(OIPA_data['Client_First_Name'] == choice ) | (OIPA_data['Client_Last_Name'] == choice) | (OIPA_data['Policy_Number'] == choice)  ] 
     predictors = ["Attained_age_at_Issue", "Income_per_Annum", "Credit_Score", "Risk_Appetite_Score", "SnP_500_Index_Score", "Social_Media_Score"]
-    
-	X_test = test_rec[predictors]
-    
+	
+    X_test = test_rec[predictors]
     #ML based model
 	
 	import pickle
+	X_test = test_rec[predictors]
 	filename = "finalized_model_rf.sav"
 	loaded_model = pickle.load(open(filename, 'rb'))
 	prediction = loaded_model.predict(X_test)
