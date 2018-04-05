@@ -33,6 +33,7 @@ def fun(q):
     import pandas as pd
     import os
     import csv
+	import sklearn
     #os.chdir("E:\\PoCs\\SE2")  ## have some library
     
     #current fund value
