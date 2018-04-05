@@ -44,47 +44,44 @@ def fun(q):
     
     #Filter the required data
     test_rec = OIPA_data.loc[(OIPA_data['Client_First_Name'] == choice ) | (OIPA_data['Client_Last_Name'] == choice) | (OIPA_data['Policy_Number'] == choice)  ] 
+    predictors = ["Attained_age_at_Issue", "Income_per_Annum", "Credit_Score", "Risk_Appetite_Score", "SnP_500_Index_Score", "Social_Media_Score"]
     
+	X_test = test_rec[predictors]
     
-    #Rule based model
-    def Classify(test_rec):
-        if test_rec.Attained_age_at_Issue.values < 50 and test_rec.Marital_Status.values == 'Single' and test_rec.Income_per_Annum.values < 80000 and test_rec.Credit_Score.values > 300 and test_rec.Employment_Status.values == 'Working' and test_rec.Risk_Appetite_Score.values > 5 and test_rec.SnP_500_Index_Score.values > 6 :
-            #print("Financial Guidance = 'Aggressive'")
-            return("Aggressive")
-        if test_rec.Attained_age_at_Issue.values >= 50 and test_rec.Marital_Status.values == 'Married' and test_rec.Income_per_Annum.values > 80000 and test_rec.Credit_Score.values > 400 and test_rec.Employment_Status.values == 'Working' and test_rec.Risk_Appetite_Score.values <= 5 and test_rec.SnP_500_Index_Score.values < 6 :        
-            #print("Financial Guidance ='Safetynet'")
-            return("Safetynet")
-        
-    category = Classify(test_rec)
-    
+    #ML based model
+	
+	import pickle
+	filename = "finalized_model_rf.sav"
+	loaded_model = pickle.load(open(filename, 'rb'))
+	prediction = loaded_model.predict(X_test)
+	if prediction == 1:
+		category = "Safetynet"    
+	else:
+		category = "Aggressive"
+	
+	#assign the category to the financial guidance strategy
+	test_rec["Financial_Guidance_Strategy"] = category
+	
+	#update to OIPA database
+	OIPA_data['Financial_Guidance_Strategy'] = OIPA_data['Policy_Number'].map(test_rec.set_index('Policy_Number')['Financial_Guidance_Strategy']).fillna(OIPA_data['Financial_Guidance_Strategy'])
+	OIPA_data.to_csv("OIPA.csv", index = False)
+	
+	#Generating a results report
+	test_rec.to_csv("results.csv", index = False)
+   
     # Loading the fund values
     
-    
-    csv_file = csv.reader(open('Current_Fund_Values1.csv'), delimiter=",")
-    for row in csv_file:
-        print(row)
-        #if choice == row[0]:
-        if (choice == row[2] or choice == row[0] or choice == row[1]):
-            print("in")
-            #Policy_Status = row[3]
-            #Contract_Issue_date = row[4]
-            #Total_Net_Worth = row[5]
-            input1 = row[6]
-            print(input1)
-            input2 = row[7]
-            print(input2)
-            input3 = row[8]
-            print(input3)
-            input4 = row[9]
-            print(input4)
-            input5 = row[10]
-            print(input5)
-    
-    Current_Investment_Cashvalue_equity = float(input1)
-    Current_Investment_Cashvalue_MM = float(input2)
-    Current_Investment_units_equity = float(input3)        
-    Current_Investment_units_MM = float(input4)
-    Todays_Unit_Value = float(input5)
+    #Read current fund values
+	csv_file = pd.read_csv("Current_Fund_Values1.csv")
+	current_fund_values = csv_file.loc[(csv_file['Client_First_Name'] == choice ) | (csv_file['Client_Second_Name'] == choice) | (csv_file['Policy_Number'] == choice)  ] 
+
+
+    Current_Investment_Cashvalue_equity = float(current_fund_values.Current_Investment_Cashvalue_equity.values)
+	Current_Investment_Cashvalue_MM = float(current_fund_values.Current_Investment_Cashvalue_MM.values)
+	Current_Investment_units_equity = float(current_fund_values.Current_Investment_units_equity.values)        
+	Current_Investment_units_MM = float(current_fund_values.Current_Investment_units_MM.values)
+	Todays_Unit_Value = float(current_fund_values.Todays_Unit_Value.values)
+
     
     ## Recommendatiion calculation
     
