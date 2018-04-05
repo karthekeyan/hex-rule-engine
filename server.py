@@ -5,6 +5,7 @@ import os
 import os.path
 import sys
 import json
+import sklearn
 import pandas as pd
 from flask import request
 import requests
@@ -33,7 +34,6 @@ def fun(q):
     import pandas as pd
     import os
     import csv
-    import sklearn
     #os.chdir("E:\\PoCs\\SE2")  ## have some library
     
     #current fund value
