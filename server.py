@@ -87,11 +87,12 @@ def fun(q):
     Bond_NAV = float(current_fund_values.Todays_Unit_Value_Bond.values)
     Current_Total_Cash_value = Current_Investment_Cashvalue_equity  + Current_Investment_Cashvalue_MM
     Current_Equity_Percentage = round((Current_Investment_Cashvalue_equity/Current_Total_Cash_value)*100,2)
-    Current_Bond_Percentage = round((Current_Investment_Cashvalue_MM/Current_Total_Cash_value)* 100,2
+    Current_Bond_Percentage = round((Current_Investment_Cashvalue_MM/Current_Total_Cash_value)* 100,2)
 
     
     ## Recommendatiion calculation
     
+    #if category == "Aggressive":
     if category == "Aggressive":
         total = Current_Investment_Cashvalue_equity + Current_Investment_Cashvalue_MM
         equity_share = (Current_Investment_Cashvalue_equity / total)*100
