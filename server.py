@@ -45,42 +45,42 @@ def fun(q):
     #Filter the required data
     test_rec = OIPA_data.loc[(OIPA_data['Client_First_Name'] == choice ) | (OIPA_data['Client_Last_Name'] == choice) | (OIPA_data['Policy_Number'] == choice)  ] 
     predictors = ["Attained_age_at_Issue", "Income_per_Annum", "Credit_Score", "Risk_Appetite_Score", "SnP_500_Index_Score", "Social_Media_Score"]
-	
+    
     X_test = test_rec[predictors]
     #ML based model
-	
-	import pickle
-	X_test = test_rec[predictors]
-	filename = "finalized_model_rf.sav"
-	loaded_model = pickle.load(open(filename, 'rb'))
-	prediction = loaded_model.predict(X_test)
-	if prediction == 1:
-		category = "Safetynet"    
-	else:
-		category = "Aggressive"
-	
-	#assign the category to the financial guidance strategy
-	test_rec["Financial_Guidance_Strategy"] = category
-	
-	#update to OIPA database
-	OIPA_data['Financial_Guidance_Strategy'] = OIPA_data['Policy_Number'].map(test_rec.set_index('Policy_Number')['Financial_Guidance_Strategy']).fillna(OIPA_data['Financial_Guidance_Strategy'])
-	OIPA_data.to_csv("OIPA.csv", index = False)
-	
-	#Generating a results report
-	test_rec.to_csv("results.csv", index = False)
+    
+    import pickle
+    X_test = test_rec[predictors]
+    filename = "finalized_model_rf.sav"
+    loaded_model = pickle.load(open(filename, 'rb'))
+    prediction = loaded_model.predict(X_test)
+    if prediction == 1:
+        category = "Safetynet"    
+    else:
+        category = "Aggressive"
+    
+    #assign the category to the financial guidance strategy
+    test_rec["Financial_Guidance_Strategy"] = category
+    
+    #update to OIPA database
+    OIPA_data['Financial_Guidance_Strategy'] = OIPA_data['Policy_Number'].map(test_rec.set_index('Policy_Number')['Financial_Guidance_Strategy']).fillna(OIPA_data['Financial_Guidance_Strategy'])
+    OIPA_data.to_csv("OIPA.csv", index = False)
+    
+    #Generating a results report
+    test_rec.to_csv("results.csv", index = False)
    
     # Loading the fund values
     
     #Read current fund values
-	csv_file = pd.read_csv("Current_Fund_Values1.csv")
-	current_fund_values = csv_file.loc[(csv_file['Client_First_Name'] == choice ) | (csv_file['Client_Second_Name'] == choice) | (csv_file['Policy_Number'] == choice)  ] 
+    csv_file = pd.read_csv("Current_Fund_Values1.csv")
+    current_fund_values = csv_file.loc[(csv_file['Client_First_Name'] == choice ) | (csv_file['Client_Second_Name'] == choice) | (csv_file['Policy_Number'] == choice)  ] 
 
 
     Current_Investment_Cashvalue_equity = float(current_fund_values.Current_Investment_Cashvalue_equity.values)
-	Current_Investment_Cashvalue_MM = float(current_fund_values.Current_Investment_Cashvalue_MM.values)
-	Current_Investment_units_equity = float(current_fund_values.Current_Investment_units_equity.values)        
-	Current_Investment_units_MM = float(current_fund_values.Current_Investment_units_MM.values)
-	Todays_Unit_Value = float(current_fund_values.Todays_Unit_Value.values)
+    Current_Investment_Cashvalue_MM = float(current_fund_values.Current_Investment_Cashvalue_MM.values)
+    Current_Investment_units_equity = float(current_fund_values.Current_Investment_units_equity.values)        
+    Current_Investment_units_MM = float(current_fund_values.Current_Investment_units_MM.values)
+    Todays_Unit_Value = float(current_fund_values.Todays_Unit_Value.values)
 
     
     ## Recommendatiion calculation
@@ -180,7 +180,7 @@ def fun(q):
     val = {"ClientFirstName":Client_FName, "ClientLastName":Client_LName, "ClientPolicyNo":Client_PolNo,  "ClientAge":Client_Age, "ClientCategory": category, "EquityFundName":Equity_fund_name, "BondFundName":MM_fund_name,  "BeforeCashVal":Before_Fund_Switch_Equity_Cash_Value,"BeforeOutstanding":Before_Fund_Switch_Equity_Outstanding_units,"BeforePercentSplit":Before_Fund_Switch_Equity_Percent_Split,"BeforeMMCashVal":Before_Fund_Switch_MM_Cash_Value,"BeforeMMOutstanding":Before_Fund_Switch_MM_Outstanding_units,"BeforeMMPercentSplit":Before_Fund_Switch_MM_Percent_Split,"RecommendedEquitySplit":Recommended_Equity_Split,"RecommendedMM":Recommended_MM_Split,"AfterCashValue":After_Fund_Switch_Equity_Cash_Value,"AfterEquityUnits":After_Fund_Switch_Equity_Units,"AfterMMCashValue":After_Fund_Switch_MM_Cash_Value,"AfterMMEquityUnits":After_Fund_Switch_MM_Units, "EquitySwitchin":Equity_Switchin, "EquitySwitchout":Equity_Switchout,  "MMSwitchin":mm_Switchin, "MMSwitchout":mm_Switchout, "EquityNAV": Equity_NAV, "BondNAV": Bond_NAV, "EquitySwitchAmt": Equity_switch_amount, "BondSwitchAmt": mm_switch_amount }
     
     return (json.dumps(val))
-	
+    
 if __name__ == '__main__':
     
     port = int(os.environ.get("PORT", 5000))
