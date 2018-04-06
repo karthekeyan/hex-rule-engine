@@ -1,10 +1,10 @@
 Client_First_Name,Client_Last_Name,Policy_Number,Attained_age_at_Issue,Gender,Marital_Status,Income_per_Annum,Employment_Status,State_Geo,Credit_Score,Risk_Appetite_Score,SnP_500_Index_Score,Social_Media_Score,Financial_Guidance_Strategy
 Fredrick,Gonsalves,ALBDULA000048805,50,Male,Married,250000,Working,Alabama,500,5,5,6,Safetynet
 Valarie,Jones,ALBDULA000049005,32,Female,Single,75000,Working,New York,400,7,7,7,Aggressive
-Austin,Stevens,ALBDULA000048900,35,Male,Single,78000,Working,Syracuse,450,7,7,7,Aggressive
+Austine,Stevense,ALBDULA000048900,35,Male,Single,78000,Working,Syracuse,450,7,7,7,Aggressive
 Pedro,Gonsalez,ALBDULA000048901,51,Male,Married,200000,Working,New York,510,4,5,6,Safetynet
 Shabnam,Tafsir,ALBDULA000048902,31,Female,Married,10000,Working,Chicago,490,4,4,4,Safetynet
-Dwayne,Johnson,ALBDULA000048903,38,Male,Single,70000,Working,New Jersey,550,7,7,7,Aggressive
+Dwayne,Summer,ALBDULA000048903,38,Male,Single,70000,Working,New Jersey,550,7,7,7,Aggressive
 Rafael,Nadal,ALBDULA000048904,41,Male,Single,72000,Working,Chicago,400,6,7,4,Aggressive
 Don,Bosco,ALBDULA000048905,55,Male,Married,150000,Working,California,550,3,4,5,Safetynet
 Simona,Simonavich,ALBDULA000048906,31,Female,Married,55000,Working,Virginia,480,4,5,5,Safetynet
@@ -14,7 +14,7 @@ Elysse,Perry,ALBDULA000048909,31,Female,Single,20000,Working,Illinois,490,6,7,6,
 Nalin,Kohli,ALBDULA000048910,43,Male,Single,39000,Working,Illinois,310,6,7,8,Aggressive
 Pablo,Escobar,ALBDULA000048911,39,Male,Married,79000,Working,Connecticut,600,4,5,5,Safetynet
 Kevin,Nash,ALBDULA000048912,36,Male,Single,66000,Working,Baltimore,340,6,7,6,Aggressive
-Emelia,Nash,ALBDULA000048913,29,Female,Married,70000,Working,Arkansas,500,4,5,5,Safetynet
+Emelia,Nass,ALBDULA000048913,29,Female,Married,70000,Working,Arkansas,500,4,5,5,Safetynet
 Octavius,Dundee,ALBDULA000048914,41,Male,Married,75000,Working,Arizona,450,4,4,5,Safetynet
 Philomena,S,ALBDULA000048915,33,Female,Single,66000,Working,Philadelphia,385,6,7,6,Aggressive
 Rudolph,Estree,ALBDULA000048916,51,Male,Married,88000,Working,Arizona,450,4,5,4,Safetynet
@@ -29,16 +29,16 @@ Kathy,Bates,ALBDULA000048924,35,Female,Married,60000,Working,Rhode Island,450,4,
 Lidia,Malkovich,ALBDULA000048925,33,Female,Married,69000,Working,Texas,500,4,4,4,Safetynet
 Petra ,Kvitova,ALBDULA000048926,32,Female,Single,60000,Working,Virginia,600,7,8,7,Aggressive
 Steve,Austin,ALBDULA000048927,45,Male,Married,57000,Working,Massachussets,590,4,5,6,Safetynet
-Mary,Aldrich,ALBDULA000048928,33,Female,Married,65000,Working,Chicago,590,3,3,3,Safetynet
+Marie,Aldrich,ALBDULA000048928,33,Female,Married,65000,Working,Chicago,590,3,3,3,Safetynet
 Tommy,Hilfiger,ALBDULA000048929,43,Male,Single,43000,Working,Arizona,580,7,8,7,Aggressive
-Mary,Poppins,ALBDULA000048930,33,Female,Married,30000,Working,Chicago,490,3,3,3,Safetynet
+Dom,Poppins,ALBDULA000048930,33,Female,Married,30000,Working,Chicago,490,3,3,3,Safetynet
 Jim,Knight,ALBDULA000048931,36,Male,Single,65000,Working,Baltimore,350,6,7,7,Aggressive
 Richard ,Piebus,ALBDULA000048932,38,Male,Married,49000,Working,South Dakota,450,4,5,7,Safetynet
 Jonty ,Rhodes,ALBDULA000048933,33,Male,Single,39000,Working,North Dakota,340,8,9,4,Aggressive
 Peter,Kwerton,ALBDULA000048934,39,Male,Married,34000,Working,South Dakota,560,4,5,7,Safetynet
-Richard ,King,ALBDULA000048935,31,Male,Married,57000,Working,Massachussets,590,4,5,6,Safetynet
+Richie,King,ALBDULA000048935,31,Male,Married,57000,Working,Massachussets,590,4,5,6,Safetynet
 Justin,Bieber,ALBDULA000048936,26,Male,Married,65000,Working,Chicago,590,3,3,3,Safetynet
-Kelly,Clarkman,ALBDULA000048937,32,Female,Married,34000,Working,New York,560,4,3,5,Safetynet
+Kelly,Clarkmen,ALBDULA000048937,32,Female,Married,34000,Working,New York,560,4,3,5,Safetynet
 Britanny,Spears,ALBDULA000048938,38,Female,Single,26000,Working,New Jersey,480,7,8,5,Aggressive
 Joseph ,Parker,ALBDULA000048939,32,Male,Married,34000,Working,New York,560,4,3,5,Safetynet
 Sidharth,Malhotra,ALBDULA000048940,33,Male,Single,34000,Working,Arkansas,450,6,8,5,Aggressive
@@ -48,12 +48,12 @@ Mary,Higgins,ALBDULA000048943,38,Female,Married,45000,Working,Washington,440,4,3
 Kristy,Haddin,ALBDULA000048944,31,Female,Single,45000,Working,Arkansas,680,6,7,5,Aggressive
 Armenio,Clarkman,ALBDULA000048945,43,Male,Single,69000,Working,Baltimore,510,7,8,3,Aggressive
 Hades,Lightman,ALBDULA000048946,32,Male,Single,49000,Working,South Dakota,360,6,7,4,Aggressive
-Arabella ,Kristy,ALBDULA000048947,33,Female,Married,560000,Working,North Dakota,670,4,5,6,Safetynet
+Arabella ,Kriste,ALBDULA000048947,33,Female,Married,560000,Working,North Dakota,670,4,5,6,Safetynet
 Sachin,Tendulkar,ALBDULA000048948,45,Male,Married,90000,Working,Mumbai,600,3,7,8, 
 Smith,Anderson,ALBDULA000048949,38,Male,Single,65000,Working,Chicago,590,3,3,3,
 Johnson,Thomas,ALBDULA000048950,48,Male,Single,43000,Working,Arizona,580,7,8,7,
 Williams,Jackson,ALBDULA000048951,30,Male,Married,30000,Working,Chicago,490,3,3,3,
-Jones,White,ALBDULA000048952,62,Male,Married,65000,Working,Baltimore,350,6,7,7,
+Jonessb,White,ALBDULA000048952,62,Male,Married,65000,Working,Baltimore,350,6,7,7,
 Brown,Harris,ALBDULA000048953,62,Male,Single,49000,Working,South Dakota,450,4,5,7,
 Davis,Martin,ALBDULA000048954,58,Male,Single,39000,Working,North Dakota,340,8,9,4,
 Miller,Thomson,ALBDULA000048955,47,Male,Married,34000,Working,South Dakota,560,4,5,7,
