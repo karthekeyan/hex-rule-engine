@@ -85,9 +85,9 @@ def fun(q):
     #Todays_Unit_Value = float(current_fund_values.Todays_Unit_Value.values)
     Equity_NAV = float(current_fund_values.Todays_Unit_Value_Eq.values)
     Bond_NAV = float(current_fund_values.Todays_Unit_Value_Bond.values)
-    Current_Total_Cash_value = Current_Investment_Cashvalue_equity  + Current_Investment_Cashvalue_MM
-    Current_Equity_Percentage = round((Current_Investment_Cashvalue_equity/Current_Total_Cash_value)*100,2)
-    Current_Bond_Percentage = round((Current_Investment_Cashvalue_MM/Current_Total_Cash_value)* 100,2)
+    Current_Total_Cash_value = round((Current_Investment_Cashvalue_equity  + Current_Investment_Cashvalue_MM),3)
+    Current_Equity_Percentage = round((Current_Investment_Cashvalue_equity/Current_Total_Cash_value)*100,3)
+    Current_Bond_Percentage = round((Current_Investment_Cashvalue_MM/Current_Total_Cash_value)* 100,3)
 
     
     ## Recommendatiion calculation
