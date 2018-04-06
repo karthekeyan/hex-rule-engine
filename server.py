@@ -78,10 +78,10 @@ def fun(q):
     current_fund_values = csv_file.loc[(csv_file['Client_First_Name'] == choice ) | (csv_file['Client_Second_Name'] == choice) | (csv_file['Policy_Number'] == choice)  ] 
 
 
-    Current_Investment_Cashvalue_equity = float(current_fund_values.Current_Investment_Cashvalue_equity.values)
-    Current_Investment_Cashvalue_MM = float(current_fund_values.Current_Investment_Cashvalue_MM.values)
-    Current_Investment_units_equity = float(current_fund_values.Current_Investment_units_equity.values)        
-    Current_Investment_units_MM = float(current_fund_values.Current_Investment_units_MM.values)
+    Current_Investment_Cashvalue_equity = round(float(current_fund_values.Current_Investment_Cashvalue_equity.values),3)
+    Current_Investment_Cashvalue_MM = round(float(current_fund_values.Current_Investment_Cashvalue_MM.values),3)
+    Current_Investment_units_equity = round(float(current_fund_values.Current_Investment_units_equity.values),3)        
+    Current_Investment_units_MM = round(float(current_fund_values.Current_Investment_units_MM.values),3)
     #Todays_Unit_Value = float(current_fund_values.Todays_Unit_Value.values)
     Equity_NAV = float(current_fund_values.Todays_Unit_Value_Eq.values)
     Bond_NAV = float(current_fund_values.Todays_Unit_Value_Bond.values)
