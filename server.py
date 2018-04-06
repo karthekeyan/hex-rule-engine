@@ -69,7 +69,7 @@ def fun(q):
     OIPA_data.to_csv("OIPA.csv", index = False)
     
     #Generating a results report
-    test_rec.to_csv("./results.csv", index = False)
+    test_rec.to_csv("/tmp/results.csv", index = False)
    
     # Loading the fund values
     
